@@ -83,8 +83,8 @@ void * searchTreeMap(TreeMap * tree, void* key) {
         }
       }
     }
-    tree->current->value = NULL;
-    return tree->current->value;
+    tree->current = NULL;
+    return tree->current;
 }
 
 
