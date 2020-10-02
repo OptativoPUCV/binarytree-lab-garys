@@ -54,6 +54,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
       else{
         if((*(int*)key) > (*(int*)(tree->current->key))){
           tree->current = tree->current->right;
+          printf("%d\n",(*(int*)(tree->current->key)));
         }
         else{
           if((*(int*)key) < (*(int*)(tree->current->key))){
