@@ -47,12 +47,12 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   if(searchTreeMap(tree,key) == NULL){
     if(((*(int*)key) > (*(int*)(tree->current->key))) && (tree->current->right == NULL)){
       tree->current->right = createTreeNode(key,value);
-      tree->current = tree->current->parent;
+      tree->current->parent = tree->current;
     }
     else{
       if(((*(int*)key) < (*(int*)(tree->current->key))) && (tree->current->left == NULL)){
         tree->current->left = createTreeNode(key,value);
-        tree->current = tree->current->parent;
+        tree->current->parent = tree->current;
       }
     }
   }
