@@ -61,12 +61,14 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 }
 
 TreeNode * minimum(TreeNode * x){
+  TreeMap * tree = (TreeMap *)calloc(1,sizeof(TreeMap));
+  tree->current = x;
   while(1){
-    if(x->left == NULL){
-      return x->key;
+    if(tree->current->left == NULL){
+      return tree->current->key;
     }
     else{
-      x = x->left;
+      tree->current = tree->current->left;
     }
   }
 }
