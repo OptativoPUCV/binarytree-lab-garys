@@ -79,11 +79,11 @@ void * searchTreeMap(TreeMap * tree, void* key) {
         return tree->current->value;
       }
       else{
-        if(((*(int*)key) > (*(int*)(tree->current->key)))){
+        if(((*(int*)key) > (*(int*)(tree->current->key))) && (tree->current->right != NULL)){
           tree->current = tree->current->right;
         }
         else{
-          if(((*(int*)key) < (*(int*)(tree->current->key)))){
+          if(((*(int*)key) < (*(int*)(tree->current->key))) && (tree->current->left != NULL)){
             tree->current = tree->current->left;
           }
         }
