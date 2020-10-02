@@ -75,16 +75,18 @@ void * searchTreeMap(TreeMap * tree, void* key) {
       if((*(int*)key) == (*(int*)(tree->current->key))){
         return tree->current->value;
       }
-      if((tree->current->left == NULL) && (tree->current->right == NULL)){
-        return NULL;
-      }
       else{
-        if(((*(int*)key) > (*(int*)(tree->current->key))) && (tree->current->right != NULL)){
-          tree->current = tree->current->right;
+        if((tree->current->left == NULL) && (tree->current->right == NULL)){
+          return NULL;
         }
         else{
-          if(tree->current->left != NULL){
-            tree->current = tree->current->left;
+          if(((*(int*)key) > (*(int*)(tree->current->key))) && (tree->current->right != NULL)){
+            tree->current = tree->current->right;
+          }
+          else{
+            if(tree->current->left != NULL){
+              tree->current = tree->current->left;
+            }
           }
         }
       }
