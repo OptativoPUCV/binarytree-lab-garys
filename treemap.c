@@ -93,7 +93,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       if(((tree->current->right != NULL) && (tree->current->left == NULL))){
         tree->current = tree->current->parent;
         tree->current->right = tree->current->right->right;
-        printf("%d",(*(int*)(tree->current->key)));
+        printf("%d\n",(*(int*)(tree->current->key)));
       }
     }
   }
