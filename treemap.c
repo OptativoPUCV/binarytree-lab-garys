@@ -79,18 +79,20 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     tree->current = tree->current->parent;
     if((tree->current->left == node)){
       tree->current->left = NULL;
+      free(node);
     }
     else{
       tree->current->right = NULL;
+      free(node);
     }
   }
   else{
-    if(((tree->current->left != NULL) && (tree->current->right == NULL))){
-      tree->current = tree->current->left;
-      printf("%d",(*(int*)(tree->current->key)));
+    if(((node->right != NULL) && (node->left == NULL))){
+      node->parent->right = node->right;
+      free(node);
     }
     else{
-      if(((tree->current->right != NULL) && (tree->current->left == NULL))){
+      if(((node->left != NULL) && (node->right == NULL))){
         tree->current = tree->current->parent;
         printf("%d\n",(*(int*)(tree->current->key)));
         tree->current->right = NULL;
