@@ -203,6 +203,7 @@ void * upperBound(TreeMap * tree, void* key) {
 }
 
 void * firstTreeMap(TreeMap * tree) {
+    tree->current = tree->root;
     while(1){
       if(tree->current->left != NULL){
         tree->current = tree->current->left;
