@@ -114,6 +114,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       else{
         if((node->right != NULL) && (node->left != NULL)){
           aux = minimum(node);
+          printf("%d\n",(*(int*)(aux->key)));
           node->key = aux->key;
           node->value = aux->value;
           if((aux->left == NULL) && (aux->right == NULL)){
