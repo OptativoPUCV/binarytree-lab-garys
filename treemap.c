@@ -73,6 +73,7 @@ TreeNode * minimum(TreeNode * x){
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
+  TreeNode * aux;
   if((node->left == NULL) && (node->right == NULL)){
     tree->current = node->parent;
     if((tree->current->left == node)){
@@ -108,6 +109,51 @@ void removeNode(TreeMap * tree, TreeNode* node) {
           node->parent->right = node->left;
           node->parent->right->parent = node->parent;
           free(node);
+        }
+      }
+      else{
+        if((node->right != NULL) && (node->left != NULL)){
+          aux = minimum(node);
+          node->key = aux->key;
+          node->value = aux->value;
+          if((aux->left == NULL) && (aux->right == NULL)){
+            if((aux->parent->left == aux)){
+              aux->parent->left = NULL;
+              free(aux);
+            }
+            else{
+              aux->parent->right = NULL;
+              free(aux);
+            }
+          }
+          else{
+            if(((aux->right != NULL) && (aux->left == NULL))){
+              if(aux->parent->right == aux){
+                aux->parent->right = aux->right;
+                aux->parent->right->parent = aux->parent;
+                free(aux);
+              }
+              else{
+                aux->parent->left = aux->right;
+                aux->parent->right->parent = aux->parent;
+                free(aux);
+              }
+            }
+            else{
+              if(((aux->left != NULL) && (aux->right == NULL))){
+                if(aux->parent->left == aux){
+                  aux->parent->left = aux->left;
+                  aux->parent->right->parent = aux->parent;
+                  free(aux);
+                }
+                else{
+                  aux->parent->right = aux->left;
+                  aux->parent->right->parent = aux->parent;
+                  free(aux);
+                }
+              }
+            }
+          }
         }
       }
     }
