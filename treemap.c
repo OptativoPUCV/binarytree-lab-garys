@@ -210,6 +210,7 @@ void * firstTreeMap(TreeMap * tree) {
       }
       else{
         return tree->current;
+        printf("%d\n",(*(int*)(tree->current->key)));
       }
     }
     
