@@ -221,12 +221,13 @@ void * nextTreeMap(TreeMap * tree) {
       printf("%d\n",(*(int*)(tree->current->key)));
       tree->current = tree->current->left;
       printf("%d\n",(*(int*)(tree->current->key)));
-      return tree->current->key;
     }
     else{
       printf("%d\n",(*(int*)(tree->current->key)));
       tree->current = tree->current->right;
       printf("%d\n",(*(int*)(tree->current->key)));
+    }
+    if((tree->current->right == NULL) && (tree->current->left == NULL)){
       return tree->current->key;
     }
   }
