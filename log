@@ -424,3 +424,9 @@ Sat Oct  3 19:49:57 UTC 2020:
  1 file changed, 6 insertions(+), 4 deletions(-)
  tests:  0|0
 d083fe2
+Sat Oct  3 19:50:43 UTC 2020: 
+ treemap.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+ tests:  16|4
+total_score: 30/70
+2d91bdc
