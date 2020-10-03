@@ -94,7 +94,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         tree->current = tree->current->parent;
         printf("%d\n",(*(int*)(tree->current->key)));
         tree->current->right = tree->current->right->right;
-        printf("%d\n",(*(int*)(tree->current->key)));
+        printf("%d\n",(*(int*)(tree->root->right->key)));
       }
     }
   }
