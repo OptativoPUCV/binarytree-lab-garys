@@ -211,8 +211,8 @@ void * firstTreeMap(TreeMap * tree) {
         printf("%d\n",(*(int*)(tree->current->key)));
       }
       else{
-        return tree->current;
         printf("%d\n",(*(int*)(tree->current->key)));
+        return tree->current;
       }
     }
     
