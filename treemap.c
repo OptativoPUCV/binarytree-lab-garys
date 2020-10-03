@@ -74,7 +74,6 @@ TreeNode * minimum(TreeNode * x){
 
 void removeNode(TreeMap * tree, TreeNode* node) {
   tree->current = node;
-  printf("%d\n",(*(int*)(tree->current->key)));
   if((tree->current->left == NULL) && (tree->current->right == NULL)){
     tree->current = tree->current->parent;
     if((tree->current->left == node)){
@@ -93,8 +92,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
     else{
       if(((node->left != NULL) && (node->right == NULL))){
-        
-        
+        node->parent->right = node->left;
+        free(node);
       }
     }
   }
