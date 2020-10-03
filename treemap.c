@@ -204,14 +204,11 @@ void * upperBound(TreeMap * tree, void* key) {
 
 void * firstTreeMap(TreeMap * tree) {
     tree->current = tree->root;
-    printf("%d\n",(*(int*)(tree->current->key)));
     while(1){
       if(tree->current->left != NULL){
         tree->current = tree->current->left;
-        printf("%d\n",(*(int*)(tree->current->key)));
       }
       else{
-        printf("%d\n",(*(int*)(tree->current->key)));
         return tree->current->key;
       }
     }
@@ -219,5 +216,6 @@ void * firstTreeMap(TreeMap * tree) {
 }
 
 void * nextTreeMap(TreeMap * tree) {
-    return NULL;
+    tree->current = tree->current->right;
+    return tree->current->key;
 }
