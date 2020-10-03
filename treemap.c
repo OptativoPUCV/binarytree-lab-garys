@@ -212,7 +212,7 @@ void * firstTreeMap(TreeMap * tree) {
       }
       else{
         printf("%d\n",(*(int*)(tree->current->key)));
-        return tree->current;
+        return tree->current->key;
       }
     }
     
