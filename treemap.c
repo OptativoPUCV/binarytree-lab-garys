@@ -199,7 +199,17 @@ void * searchTreeMap(TreeMap * tree, void* key) {
 
 
 void * upperBound(TreeMap * tree, void* key) {
-    return NULL;
+  while(1){
+    if(tree->current > tree->current->left){
+      tree->current = tree->current->right;
+    }
+    else{
+      tree->current = tree->current->left;
+    }
+    if(tree->current->key == key){
+      return tree->current->value;
+    }
+  }
 }
 
 void * firstTreeMap(TreeMap * tree) {
@@ -216,7 +226,10 @@ void * firstTreeMap(TreeMap * tree) {
 }
 
 void * nextTreeMap(TreeMap * tree) {
-  tree->current = tree->current->right;
-  printf("%d\n",(*(int*)(tree->current->key)));
+  TreeNode * aux = tree->current->key;
+  if(tree->current->right != NULL){
+    tree->current = tree->current->right;
+  }
+  tree->current = upperBound(tree,aux);
   return tree->current->key;
 }
