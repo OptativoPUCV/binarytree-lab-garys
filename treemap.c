@@ -216,19 +216,6 @@ void * firstTreeMap(TreeMap * tree) {
 }
 
 void * nextTreeMap(TreeMap * tree) {
-  while(1){
-    if(tree->current->left > tree->current){
-      printf("%d\n",(*(int*)(tree->current->key)));
-      tree->current = tree->current->left;
-      printf("%d\n",(*(int*)(tree->current->key)));
-    }
-    else{
-      printf("%d\n",(*(int*)(tree->current->key)));
-      tree->current = tree->current->right;
-      printf("%d\n",(*(int*)(tree->current->key)));
-    }
-    if((tree->current->right == NULL) && (tree->current->left == NULL)){
-      return tree->current->key;
-    }
-  }
+  tree->current = tree->current->right;
+  return tree->current->key;
 }
