@@ -250,7 +250,7 @@ void * nextTreeMap(TreeMap * tree) {
       tree->current = tree->current->right;
     }
     else{
-      if(((*(int*)aux->key) > (*(int*)(tree->current->left->key)))){
+      if(((*(int*)aux->key) > (*(int*)(tree->current->left->key))) && (tree->current->right != NULL)){
         tree->current = tree->current->left;
       }
     }
