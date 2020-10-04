@@ -249,5 +249,5 @@ void * nextTreeMap(TreeMap * tree) {
     tree->current = tree->current->right;
   }
   tree->current = upperBound(tree,aux);
-  return NULL;
+  return tree->current;
 }
