@@ -208,9 +208,9 @@ void * upperBound(TreeMap * tree, void* key) {
     return NULL;
   }
   while(1){
+    printf("%d\n",(*(int*)(tree->current->key)));
     if(((*(int*)key) < (*(int*)(tree->current->key))) && (tree->current->key > aux->key)){
       aux = tree->current;
-      printf("%d\n",(*(int*)(tree->current->key)));
     }
     if((*(int*)key) == (*(int*)(tree->current->key))){
       aux = tree->current;
