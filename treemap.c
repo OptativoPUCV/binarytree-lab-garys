@@ -250,5 +250,5 @@ void * nextTreeMap(TreeMap * tree) {
   }
   tree->current = upperBound(tree,aux);
   printf("%d\n",(*(int*)(tree->current->key)));
-  return tree->current;
+  return NULL;
 }
