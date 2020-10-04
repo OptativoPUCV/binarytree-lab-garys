@@ -248,7 +248,6 @@ void * nextTreeMap(TreeMap * tree) {
   if(tree->current->right != NULL){
     tree->current = tree->current->right;
     while(1){
-      printf("%d\n",(*(int*)(tree->current->key)));
       if(tree->current->left == NULL){
         return tree->current->value;
       }
@@ -260,6 +259,7 @@ void * nextTreeMap(TreeMap * tree) {
   else{
     TreeNode * aux = tree->current;
     while(1){
+      printf("%d\n",(*(int*)(tree->current->key)));
       if(tree->current == tree->root){
         return tree->current->value;
       }
