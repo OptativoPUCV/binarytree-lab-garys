@@ -244,10 +244,12 @@ void * firstTreeMap(TreeMap * tree) {
 }
 
 void * nextTreeMap(TreeMap * tree) {
+  /*
   if(tree->current->right != NULL){
     tree->current = tree->current->right;
     tree->current = minimum(tree->current);
     return tree->current->value;
   }
+  */
   return tree->current->value;
 }
