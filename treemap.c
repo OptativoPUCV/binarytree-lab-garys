@@ -203,23 +203,20 @@ void * upperBound(TreeMap * tree, void* key) {
   TreeNode * aux = tree->root;
   while(1){
     printf("%d\n",(*(int*)(tree->current->key)));
+    if(((*(int*)key) < (*(int*)(tree->current->key))) && (aux->key > tree->current->key)){
+      aux = tree->current;
+    }
     if((*(int*)key) == (*(int*)(tree->current->key))){
       aux = tree->current;
       return aux->value;
     }
     else{
       if((tree->current->left == NULL) && (tree->current->right == NULL)){
-        if(((*(int*)key) > (*(int*)(tree->current->key))) && (aux->key > tree->current->key)){
-          aux = tree->current;
-        }
         return aux->value;
       }
       else{
         if(((*(int*)key) > (*(int*)(tree->current->key))) && (tree->current->right != NULL)){
           tree->current = tree->current->right;
-          if(aux->key > tree->current->key){
-            aux = tree->current;
-          }
         }
         else{
           if((tree->current->left != NULL)){
