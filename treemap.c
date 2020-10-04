@@ -220,7 +220,11 @@ void * upperBound(TreeMap * tree, void* key) {
         }
         else{
           if((tree->current->left != NULL)){
+            if(((*(int*)key) > (*(int*)(tree->current->key))) && (aux->key > tree->current->key)){
+              aux = tree->current;
+            }
             tree->current = tree->current->left;
+            
           }
         }
       }
