@@ -244,16 +244,8 @@ void * firstTreeMap(TreeMap * tree) {
 }
 
 void * nextTreeMap(TreeMap * tree) {
-  TreeNode * aux = tree->current;
-  while(1){
-    if(((*(int*)aux->key) > (*(int*)(tree->current->right->key))) && (tree->current->right != NULL)){
-      tree->current = tree->current->right;
-    }
-    else{
-      if(((*(int*)aux->key) > (*(int*)(tree->current->left->key))) && (tree->current->right != NULL)){
-        tree->current = tree->current->left;
-      }
-    }
-    return tree->current->value;
+  if(tree->current->right != NULL){
+    tree->current = tree->current->right;
   }
+  return tree->current->value;
 }
