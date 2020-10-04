@@ -212,6 +212,7 @@ void * upperBound(TreeMap * tree, void* key) {
     }
     else{
       if((tree->current->left == NULL) && (tree->current->right == NULL)){
+        printf("%d\n",(*(int*)(tree->current->key)));
         return aux->value;
       }
       else{
