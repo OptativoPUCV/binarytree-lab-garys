@@ -212,7 +212,7 @@ void * upperBound(TreeMap * tree, void* key) {
     }
     else{
       if((tree->current->left == NULL) && (tree->current->right == NULL)){
-        if(key > aux->key){
+        if(key < aux->key){
           return NULL;
         }
         return aux->value;
