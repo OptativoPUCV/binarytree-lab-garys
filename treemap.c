@@ -261,7 +261,12 @@ void * nextTreeMap(TreeMap * tree) {
     while(1){
       printf("%d\n",(*(int*)(tree->current->key)));
       if(tree->current == tree->root){
-        return tree->current->value;
+        if((*(int*)tree->current->key) > (*(int*)(aux->key))){
+          return tree->current->value;
+        }
+        else{
+          return NULL;
+        }
       }
       else{
         if((*(int*)tree->current->key) > (*(int*)(aux->key))){
