@@ -201,7 +201,7 @@ void * searchTreeMap(TreeMap * tree, void* key) {
 void * upperBound(TreeMap * tree, void* key) {
   tree->current = tree->root;
   TreeNode * aux = tree->root;
-  if(((*(int*)key) < (*(int*)(tree->current->key)))){
+  if(((*(int*)key) > (*(int*)(tree->current->key)))){
     aux = NULL;
     return aux;
   }
