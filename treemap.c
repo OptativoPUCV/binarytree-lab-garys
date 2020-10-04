@@ -217,5 +217,6 @@ void * firstTreeMap(TreeMap * tree) {
 
 void * nextTreeMap(TreeMap * tree) {
   tree->current = tree->current->right;
+  printf("%d\n",(*(int*)(tree->current->key)));
   return tree->current->key;
 }
