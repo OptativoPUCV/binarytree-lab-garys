@@ -115,6 +115,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
           TreeNode * aux = minimum(node);
           node->key = aux->key;
           node->value = aux->value;
+          removeNode(tree, aux);
         }
       }
     }
