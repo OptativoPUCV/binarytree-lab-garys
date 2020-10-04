@@ -258,7 +258,19 @@ void * nextTreeMap(TreeMap * tree) {
     }
   }
   else{
-    tree->current = tree->root;
+    TreeNode * aux = tree->current;
+    while(1){
+      if(tree->current == tree->root){
+        return tree->current->value;
+      }
+      else{
+        if((*(int*)tree->current->key) > (*(int*)(aux->key))){
+          aux = tree->current;
+          return tree->current->value;
+        }
+        tree->current = tree->current->parent;
+      }
+    }
   }
   return tree->current->value;
 }
