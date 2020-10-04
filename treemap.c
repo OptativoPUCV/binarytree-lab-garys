@@ -244,7 +244,7 @@ void * firstTreeMap(TreeMap * tree) {
 }
 
 void * nextTreeMap(TreeMap * tree) {
-  
+  printf("%d\n",(*(int*)(tree->current->key)));
   if(tree->current->right != NULL){
     tree->current = tree->current->right;
     while(1){
