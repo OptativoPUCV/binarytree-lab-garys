@@ -256,5 +256,8 @@ void * nextTreeMap(TreeMap * tree) {
       }
     }
   }
+  else{
+    tree->current = tree->root;
+  }
   return tree->current->value;
 }
