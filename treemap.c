@@ -110,7 +110,13 @@ void removeNode(TreeMap * tree, TreeNode* node) {
           free(node);
         }
       }
-      
+      else{
+        if((node->left != NULL) && (node->right != NULL)){
+          TreeNode * aux = minimum(node);
+          node->key = aux->key;
+          node->value = aux->value;
+        }
+      }
     }
   }
 }
