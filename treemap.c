@@ -246,14 +246,8 @@ void * firstTreeMap(TreeMap * tree) {
 void * nextTreeMap(TreeMap * tree) {
   if(tree->current->right != NULL){
     tree->current = tree->current->right;
-    while(1){
-      if(tree->current->left == NULL){
-        return tree->current->value;
-      }
-      else{
-        tree->current = tree->current->left;
-      }
-    }
+    tree->current = minimum(tree->current);
+    return tree->current->value;
   }
   return tree->current->value;
 }
